@@ -1,19 +1,27 @@
-# Project overview
+# Ru’ya Project Overview
 
 ## Motivation
-Crowded public events can benefit from timely visual information. Ru’ya explores UAV-view computer vision as a potential aid for crowd monitoring.
+
+Crowded public events create challenges for timely observation and situational awareness. Ru’ya explores the use of computer vision on aerial imagery as a potential aid for crowd monitoring.
 
 ## Approach
-The project investigates a YOLOv8-based detection workflow, using public crowd/drone-view datasets discussed in the project report. Model evaluation and the inference demo are represented by the training and inference notebooks. A dashboard provides a visual interface for presenting project outputs.
 
-## Components
-- **Training notebook:** `01_Training_VisDrone_YOLOv8.ipynb`
-- **Inference notebook:** `02_Final_Inference_Demo.ipynb`
-- **Dashboard:** existing application source in the repository
+The project uses a YOLOv8-based person-detection workflow. The training notebook prepares VisDrone annotations for YOLO format and runs model training and evaluation. The inference notebook processes video, overlays detections, and records frame-level statistics. A React dashboard provides an interface for presenting monitoring information.
 
-## Before release
-- Verify dataset citations, licenses, and exact splits.
-- Add final metrics directly from experiment outputs.
-- Document the dashboard setup and connect it to inference only if that integration is implemented.
-- Remove private paths, tokens, credentials, and restricted data.
-- Confirm the team and university permit public release.
+## Main components
+
+- **Model training:** `notebooks/01_Training_VisDrone_YOLOv8.ipynb`
+- **Inference demo:** `notebooks/02_Final_Inference_Demo.ipynb`
+- **Dashboard:** React and Vite application in the repository's `src/` directory
+
+## Technologies
+
+Python, Ultralytics YOLOv8, OpenCV, Jupyter Notebook, React, and Vite.
+
+## Team
+
+- Esra Aldhayyan — Project Leader
+- Dalya Alqahtani — Planning Manager
+- Sajedah Alqudaihi — Software Design
+- Joud Alahmari — Software Development
+- Sarah Alashgar — Testing
