@@ -1,6 +1,6 @@
 # Ru’ya Dashboard
 
-The Ru’ya dashboard is a React application powered by Vite. Its source code is maintained in the repository's `src/` directory.
+The dashboard is a React application powered by Vite. Its source code is maintained in the repository's src/ directory.
 
 ## Pages
 
@@ -13,18 +13,18 @@ The Ru’ya dashboard is a React application powered by Vite. Its source code is
 
 ## Run locally
 
-From the repository root, install dependencies and start the development server:
+Requirements: Node.js and npm.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Create and preview a production build:
+To create and preview a production build:
 
 ```bash
 npm run build
 npm run preview
 ```
 
-The dashboard provides the web interface for the project. Model inference is demonstrated separately in the notebooks.
+The dashboard provides the project's web interface. Model inference is documented and run separately through the Jupyter notebooks.
