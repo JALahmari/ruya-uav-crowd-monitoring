@@ -1,64 +1,63 @@
 # Ru’ya — Lightweight UAV-Based Crowd Detection and Monitoring
 
-Ru’ya is a graduation project exploring how lightweight computer-vision models can support crowd monitoring from an aerial/UAV perspective. The project investigates object detection, crowd-related analysis, and a dashboard-oriented way to present results.
-
-> **Project status:** This repository documents the project and links its main components. The training and inference notebooks are maintained separately until their contents are added here. Features, metrics, and deployment claims should be updated only from verified experiments.
+Ru’ya is a graduation project exploring computer vision for crowd monitoring from an aerial/UAV perspective. This repository brings together the React dashboard and the YOLOv8 training and inference notebooks.
 
 ## Project goals
-
-- Explore UAV-view crowd detection using YOLOv8.
-- Prepare and evaluate a detection workflow using public datasets.
-- Compare lightweight model variants with attention to detection quality and inference speed.
-- Present model outputs through a dashboard for easier inspection.
+- Explore person detection in drone-view imagery using YOLOv8.
+- Document the VisDrone training workflow and inference demo.
+- Present crowd-monitoring information through a dashboard interface.
+- Consider detection quality, inference speed, and deployment constraints.
 
 ## Repository structure
-
 ```text
 .
-├── README.md
+├── src/                       # React dashboard application
+├── public/                    # Public frontend assets
+├── notebooks/
+│   ├── 01_Training_VisDrone_YOLOv8.ipynb
+│   ├── 02_Final_Inference_Demo.ipynb
+│   └── README.md
 ├── docs/
 │   └── project-overview.md
-├── notebooks/
+├── dashboard/
 │   └── README.md
-└── dashboard/
-    └── README.md
+├── package.json
+└── README.md
 ```
 
-The dashboard source currently lives in this repository's existing application files. The `dashboard/` folder documentation explains its role; it does not replace the application source.
+## Dashboard
+The dashboard is a React application built with Vite. It includes dashboard, analytics, alerts, flight-control, settings, and logs pages. The UI repository alone does not establish that a live UAV or model backend is connected.
 
-## Notebooks
+### Run locally
+Requirements: Node.js and npm.
 
-The project workflow includes these notebooks:
+```bash
+npm install
+npm run dev
+```
 
-- `01_Training_VisDrone_YOLOv8.ipynb` — model training workflow for VisDrone.
-- `02_Final_Inference_Demo.ipynb` — final inference/demo workflow.
+To create a production build:
+```bash
+npm run build
+npm run preview
+```
 
-Add the notebooks to `notebooks/` after reviewing them for local paths, secrets, personal data, and dataset restrictions.
+## Model notebooks
+- [VisDrone YOLOv8 training notebook](notebooks/01_Training_VisDrone_YOLOv8.ipynb)
+- [Ru’ya inference demo notebook](notebooks/02_Final_Inference_Demo.ipynb)
 
-## Datasets
+The notebooks may require a GPU and separately downloaded datasets/model weights. Update input paths for your environment before running them. The inference notebook uses local model/video files that are not included in this repository.
 
-The project report discusses DroneCrowd, VisDrone, and WiderPerson. Dataset access, licenses, and redistribution rules differ; **do not upload dataset images or annotations unless their terms explicitly permit redistribution**. Link to official dataset sources and document the exact subset used.
+## Datasets and reproducibility
+The project report discusses public datasets including VisDrone, DroneCrowd, and WiderPerson. Dataset licenses and redistribution conditions vary; obtain data from the official sources and do not commit dataset files unless redistribution is explicitly allowed.
 
-## Getting started
+Report results only alongside the model variant, data split, metrics, hardware, and inference settings used. Do not describe planned UAV deployment or simulation as completed real-world flight testing.
 
-1. Review the notebook and dashboard-specific instructions.
-2. Install dependencies in a clean environment using the requirements documented for each component.
-3. Obtain the datasets separately from their approved sources.
-4. Update dataset paths in the notebooks for your environment.
-5. Run training or inference only after verifying the dataset paths and model weights.
-
-## Results and reproducibility
-
-Add only measured results from the final experiments, including the model variant, dataset split, evaluation metrics, hardware, and inference settings. Do not treat planned UAV deployment or simulation as completed real-world flight testing.
-
-## Team and contributions
-
-Ru’ya was developed as a graduation project by a student team. Update this section with the agreed team member names, individual contributions, and supervisor acknowledgements before publishing.
+## Team
+Add the final approved team member names, roles, and supervisor acknowledgements before public release.
 
 ## Responsible use
-
-This project is intended for research and crowd-safety support. A model's detections are estimates and should not be treated as a sole basis for emergency decisions. Review privacy, permissions, and local regulations before collecting or processing real crowd footage.
+This project is intended as a research prototype for crowd-safety support. Model outputs are estimates and should not be used as the sole basis for emergency decisions. Consider privacy, permissions, and applicable regulations before collecting or processing real crowd footage.
 
 ## License
-
-No license has been selected yet. Until a license is added, do not assume others have permission to reuse the code. Confirm team ownership and university requirements before choosing one.
+No license has been selected in this repository. Confirm team ownership and university requirements before adding a license or claiming that others may reuse the code.
