@@ -1,14 +1,14 @@
-# Ru’ya: Lightweight UAV-Based Crowd Detection and Monitoring
+# Ru’ya — Lightweight UAV-Based Crowd Detection and Monitoring
 
-Ru’ya is a graduation project exploring computer vision for crowd monitoring from an aerial perspective. The project combines a YOLOv8-based person-detection workflow with a web dashboard for presenting crowd-monitoring information.
+Ru’ya is a graduation project exploring computer vision for crowd monitoring from an aerial perspective. It combines a YOLOv8-based person-detection workflow with a React dashboard for presenting crowd-monitoring information.
 
-## Project overview
+## Features
 
-The project focuses on:
-- Detecting people in drone-view imagery using YOLOv8.
-- Training and evaluating a model with the VisDrone dataset workflow.
-- Running inference on video and collecting frame-level statistics.
-- Presenting monitoring information through a React dashboard.
+- Person-only object-detection training workflow using VisDrone annotations.
+- YOLOv8 model evaluation and ONNX export.
+- Video inference with annotated detections.
+- Grid-based crowd-monitoring indicators and frame-level statistics.
+- React dashboard with Dashboard, Analytics, Alerts, Flight Control, Settings, and Logs pages.
 
 ## Repository structure
 
@@ -28,11 +28,7 @@ The project focuses on:
 └── README.md
 ```
 
-## Dashboard
-
-The dashboard is built with React and Vite. Its pages include Dashboard, Analytics, Alerts, Flight Control, Settings, and Logs.
-
-### Run the dashboard locally
+## Dashboard setup
 
 **Requirements:** Node.js and npm.
 
@@ -41,7 +37,7 @@ npm install
 npm run dev
 ```
 
-To build and preview the production bundle:
+Create and preview a production build:
 
 ```bash
 npm run build
@@ -50,19 +46,25 @@ npm run preview
 
 ## Model notebooks
 
-1. **[VisDrone YOLOv8 training](notebooks/01_Training_VisDrone_YOLOv8.ipynb)** — prepares the VisDrone annotations for YOLO format, trains a YOLOv8 model, and evaluates the resulting weights.
-2. **[Ru’ya inference demo](notebooks/02_Final_Inference_Demo.ipynb)** — runs inference on a video, overlays detections, calculates frame-level statistics, and saves output artifacts.
+- [YOLOv8 training on VisDrone](notebooks/01_Training_VisDrone_YOLOv8.ipynb)
+- [Ru’ya video inference demo](notebooks/02_Final_Inference_Demo.ipynb)
 
-The notebooks require separately obtained datasets, model weights, and input videos. Update file paths to match your environment before running them. Large datasets, trained weights, and sample videos are not stored in this repository.
+The training notebook expects the VisDrone dataset to be downloaded separately. Set DATASET_PATH in the notebook to the folder containing the VisDrone dataset directories. The inference notebook expects a trained best.pt model and an input video, such as drone_test.mp4, in its working directory. Update the paths in the configuration cell when needed.
+
+Generated model weights, datasets, videos, and CSV outputs are excluded from version control.
 
 ## Technology stack
 
-- Python
-- Ultralytics YOLOv8
-- OpenCV
-- Jupyter Notebook
-- React
-- Vite
+Python · Ultralytics YOLOv8 · OpenCV · Jupyter Notebook · React · Vite
 
+## Project team
 
+- **Esra Aldhayyan** — Project Leader
+- **Dalya Alqahtani** — Planning Manager
+- **Sajedah Alqudaihi** — Software Design
+- **Joud Alahmari** — Software Development
+- **Sarah Alashgar** — Testing
 
+## Scope
+
+Ru’ya is a computer-vision prototype for UAV-view crowd monitoring. The repository includes a web dashboard and separate model training/inference workflows; the repository does not establish a live connection between the dashboard and model or a deployed autonomous UAV system.
