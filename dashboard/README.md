@@ -1,13 +1,28 @@
-# Dashboard
+# Dashboard application
 
-The dashboard application source is maintained in the repository. Add the actual setup and run commands here after verifying the project's package scripts and configuration.
+The React + Vite application is maintained in the repository root, with its source in `src/`.
 
-Document:
-- runtime and package manager versions;
-- installation command;
-- local development command;
-- how the dashboard receives or loads inference results;
-- screenshots of the real application;
-- any environment variables, using an example file without secrets.
+## Pages
+The app currently defines routes for:
+- Dashboard
+- Analytics
+- Alerts
+- Flight Control
+- Settings (admin-protected)
+- Logs (admin-protected)
 
-Do not claim live model integration unless it is implemented and tested.
+## Run locally
+From the repository root:
+
+```bash
+npm install
+npm run dev
+```
+
+Build and preview:
+```bash
+npm run build
+npm run preview
+```
+
+The repository includes frontend UI code. Verify any backend, authentication, live sensor, or model-inference integration separately before describing it as connected to a deployed UAV system.
