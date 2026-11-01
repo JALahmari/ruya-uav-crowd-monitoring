@@ -1,24 +1,39 @@
-# Logs
-logs
-*.log
+# Node.js
+node_modules/
+dist/
+dist-ssr/
+*.local
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# Model weights, datasets, and generated outputs
+*.pt
+*.onnx
+*.pth
+data/
+datasets/
+visdrone/
+runs/
+failure_case_frames/
+drone_test.mp4
+ruya_crowd_output.mp4
+ruya_better_crowd_output.mp4
+ruya_frame_statistics.csv
+crowd_output.mp4
+
+# Editor and OS files
+.vscode/
+.idea/
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+Thumbs.db
