@@ -1,18 +1,21 @@
-# Ru’ya — Lightweight UAV-Based Crowd Detection and Monitoring
+# Ru’ya: Lightweight UAV-Based Crowd Detection and Monitoring
 
-Ru’ya is a graduation project exploring computer vision for crowd monitoring from an aerial/UAV perspective. This repository brings together the React dashboard and the YOLOv8 training and inference notebooks.
+Ru’ya is a graduation project exploring computer vision for crowd monitoring from an aerial perspective. The project combines a YOLOv8-based person-detection workflow with a web dashboard for presenting crowd-monitoring information.
 
-## Project goals
-- Explore person detection in drone-view imagery using YOLOv8.
-- Document the VisDrone training workflow and inference demo.
-- Present crowd-monitoring information through a dashboard interface.
-- Consider detection quality, inference speed, and deployment constraints.
+## Project overview
+
+The project focuses on:
+- Detecting people in drone-view imagery using YOLOv8.
+- Training and evaluating a model with the VisDrone dataset workflow.
+- Running inference on video and collecting frame-level statistics.
+- Presenting monitoring information through a React dashboard.
 
 ## Repository structure
+
 ```text
 .
-├── src/                       # React dashboard application
-├── public/                    # Public frontend assets
+├── src/                         # React dashboard source
+├── public/                      # Dashboard assets
 ├── notebooks/
 │   ├── 01_Training_VisDrone_YOLOv8.ipynb
 │   ├── 02_Final_Inference_Demo.ipynb
@@ -26,38 +29,49 @@ Ru’ya is a graduation project exploring computer vision for crowd monitoring f
 ```
 
 ## Dashboard
-The dashboard is a React application built with Vite. It includes dashboard, analytics, alerts, flight-control, settings, and logs pages. The UI repository alone does not establish that a live UAV or model backend is connected.
 
-### Run locally
-Requirements: Node.js and npm.
+The dashboard is built with React and Vite. Its pages include Dashboard, Analytics, Alerts, Flight Control, Settings, and Logs.
+
+### Run the dashboard locally
+
+**Requirements:** Node.js and npm.
 
 ```bash
 npm install
 npm run dev
 ```
 
-To create a production build:
+To build and preview the production bundle:
+
 ```bash
 npm run build
 npm run preview
 ```
 
 ## Model notebooks
-- [VisDrone YOLOv8 training notebook](notebooks/01_Training_VisDrone_YOLOv8.ipynb)
-- [Ru’ya inference demo notebook](notebooks/02_Final_Inference_Demo.ipynb)
 
-The notebooks may require a GPU and separately downloaded datasets/model weights. Update input paths for your environment before running them. The inference notebook uses local model/video files that are not included in this repository.
+1. **[VisDrone YOLOv8 training](notebooks/01_Training_VisDrone_YOLOv8.ipynb)** — prepares the VisDrone annotations for YOLO format, trains a YOLOv8 model, and evaluates the resulting weights.
+2. **[Ru’ya inference demo](notebooks/02_Final_Inference_Demo.ipynb)** — runs inference on a video, overlays detections, calculates frame-level statistics, and saves output artifacts.
 
-## Datasets and reproducibility
-The project report discusses public datasets including VisDrone, DroneCrowd, and WiderPerson. Dataset licenses and redistribution conditions vary; obtain data from the official sources and do not commit dataset files unless redistribution is explicitly allowed.
+The notebooks require separately obtained datasets, model weights, and input videos. Update file paths to match your environment before running them. Large datasets, trained weights, and sample videos are not stored in this repository.
 
-Report results only alongside the model variant, data split, metrics, hardware, and inference settings used. Do not describe planned UAV deployment or simulation as completed real-world flight testing.
+## Technology stack
 
-## Team
-Add the final approved team member names, roles, and supervisor acknowledgements before public release.
+- Python
+- Ultralytics YOLOv8
+- OpenCV
+- Jupyter Notebook
+- React
+- Vite
 
-## Responsible use
-This project is intended as a research prototype for crowd-safety support. Model outputs are estimates and should not be used as the sole basis for emergency decisions. Consider privacy, permissions, and applicable regulations before collecting or processing real crowd footage.
+## Project team
 
-## License
-No license has been selected in this repository. Confirm team ownership and university requirements before adding a license or claiming that others may reuse the code.
+- **Esra Aldhayyan** — Project Leader
+- **Dalya Alqahtani** — Planning Manager
+- **Sajedah Alqudaihi** — Software Design
+- **Joud Alahmari** — Software Development
+- **Sarah Alashgar** — Testing
+
+## Project scope
+
+Ru’ya is a computer-vision prototype for UAV-view crowd monitoring. The repository contains the dashboard interface and model training/inference workflows; it does not by itself represent a deployed autonomous UAV system or establish a live connection between the dashboard and model.
