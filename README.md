@@ -64,14 +64,5 @@ The notebooks require separately obtained datasets, model weights, and input vid
 - React
 - Vite
 
-## Project team
 
-- **Esra Aldhayyan** — Project Leader
-- **Dalya Alqahtani** — Planning Manager
-- **Sajedah Alqudaihi** — Software Design
-- **Joud Alahmari** — Software Development
-- **Sarah Alashgar** — Testing
 
-## Project scope
-
-Ru’ya is a computer-vision prototype for UAV-view crowd monitoring. The repository contains the dashboard interface and model training/inference workflows; it does not by itself represent a deployed autonomous UAV system or establish a live connection between the dashboard and model.
