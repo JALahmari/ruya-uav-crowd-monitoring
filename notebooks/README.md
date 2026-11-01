@@ -1,24 +1,23 @@
 # Model Notebooks
 
-This folder contains the training and inference workflows for Ru’ya.
+This folder contains the model training and video inference workflows for Ru’ya.
 
-## 1. VisDrone YOLOv8 Training
+## Training: VisDrone YOLOv8
 
-File: `01_Training_VisDrone_YOLOv8.ipynb`
+File: 01_Training_VisDrone_YOLOv8.ipynb
 
-This notebook prepares VisDrone annotations in YOLO format, configures the dataset, trains a YOLOv8 model, evaluates performance, and exports the model.
+The notebook prepares VisDrone annotations for person-only detection, trains a YOLOv8 model, evaluates metrics, and exports the model to ONNX.
 
-## 2. Inference Demo
+Set DATASET_PATH to the location of the downloaded VisDrone dataset before running the notebook. Training may require a compatible GPU.
 
-File: `02_Final_Inference_Demo.ipynb`
+## Inference demo
 
-This notebook loads trained weights, runs detection on an input video, saves an annotated output video, generates frame-level statistics, and visualizes selected results.
+File: 02_Final_Inference_Demo.ipynb
 
-## Requirements
+The notebook loads trained weights, processes a video, overlays detections and grid-based indicators, writes an annotated video, exports frame-level statistics, and saves selected frames for qualitative review.
 
-- Python and Jupyter Notebook
-- Ultralytics YOLOv8
-- OpenCV
-- The dataset, trained weights, and input videos required by the selected notebook
+Place best.pt and the input video in the notebook's working directory, or update their paths in the configuration cell. ONNX checking is optional.
 
-Download datasets from their original sources and place files in your own working environment. Update notebook paths to match your environment before execution. Dataset files, trained weights, and input videos are not included in this repository.
+## Outputs
+
+The notebooks can generate model weights, annotated videos, CSV statistics, and failure-case images. These generated artifacts are excluded from version control.
