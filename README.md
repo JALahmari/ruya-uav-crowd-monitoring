@@ -57,14 +57,3 @@ Generated model weights, datasets, videos, and CSV outputs are excluded from ver
 
 Python · Ultralytics YOLOv8 · OpenCV · Jupyter Notebook · React · Vite
 
-## Project team
-
-- **Esra Aldhayyan** — Project Leader
-- **Dalya Alqahtani** — Planning Manager
-- **Sajedah Alqudaihi** — Software Design
-- **Joud Alahmari** — Software Development
-- **Sarah Alashgar** — Testing
-
-## Scope
-
-Ru’ya is a computer-vision prototype for UAV-view crowd monitoring. The repository includes a web dashboard and separate model training/inference workflows; the repository does not establish a live connection between the dashboard and model or a deployed autonomous UAV system.
