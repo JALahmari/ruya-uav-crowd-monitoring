@@ -1,28 +1,30 @@
-# Dashboard application
+# Ru’ya Dashboard
 
-The React + Vite application is maintained in the repository root, with its source in `src/`.
+The Ru’ya dashboard is a React application powered by Vite. Its source code is maintained in the repository's `src/` directory.
 
 ## Pages
-The app currently defines routes for:
+
 - Dashboard
 - Analytics
 - Alerts
 - Flight Control
-- Settings (admin-protected)
-- Logs (admin-protected)
+- Settings
+- Logs
 
 ## Run locally
-From the repository root:
+
+From the repository root, install dependencies and start the development server:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Build and preview:
+Create and preview a production build:
+
 ```bash
 npm run build
 npm run preview
 ```
 
-The repository includes frontend UI code. Verify any backend, authentication, live sensor, or model-inference integration separately before describing it as connected to a deployed UAV system.
+The dashboard provides the web interface for the project. Model inference is demonstrated separately in the notebooks.
